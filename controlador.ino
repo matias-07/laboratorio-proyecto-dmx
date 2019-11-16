@@ -39,6 +39,9 @@ Bounce boton_brillo_bounce = Bounce();
 
 void setup() {
     DMXSerial.init(DMXController, MODO_MASTER);
+    
+    // velocidad de envio de info a la consola
+    Serial.begin(9600);
 
     pinMode(BOTON_RED, INPUT_PULLUP);
     pinMode(BOTON_BLUE, INPUT_PULLUP);
@@ -81,4 +84,7 @@ void loop() {
 
     // Mandamos el valor obtenido al canal seleccionado
     DMXSerial.write(direccion_base + offset, nivel);
+    
+    // Envio de informacion a la consola
+    Serial.println("rojo: {0};verde: {1};azul: {2};brillo: {3};",offset_red,offset_green,boton_blue_bounce,offset_brillo);
 }
