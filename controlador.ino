@@ -69,6 +69,8 @@ void loop() {
     boton_red_bounce.update();
     boton_green_bounce.update();
     boton_blue_bounce.update();
+    boton_brillo_bounce.update();
+
     if (boton_red_bounce.fell()) {
         offset = offset_red;
     }
