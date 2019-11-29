@@ -60,6 +60,18 @@ void setup() {
     DMXSerial.write(direccion_base + offset_brillo, 100);
 }
 
+void pruevaDeMedicionOndaCuadrada_1() {
+    // el 170 en decimal es el 1010 1010 en binario deberia dar una onda cuadrada repite la onda 1010101010101010
+    DMXSerial.write(170, 170);
+}
+void pruevaDeMedicionOndaCuadrada_2() {
+    // repite la onda 0000000011111111
+    DMXSerial.write(0, 255);
+}
+void pruevaDeMedicionOndaCuadrada_3() {
+    // repite la onda 00000000000000001
+    DMXSerial.write(0, 1);
+}
 
 void loop() {
     // Obtenemos el valor del potenciómetro (entre 1 y 255)
